@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<link href="myStyles.css" rel="stylesheet" type="text/css" />
+		<title>Employees Service</title>
+	</head>
+	<body>
+		<h2>List of Employees</h2>
+		
+		<table>
+			<tr>
+				<th>Employee ID</th>
+				<th>Employee Name</th>
+				<th>Role</th>
+			</tr>
+			<tr th:each = "employee: ${employees}">
+				<td th:text = "${employee.id}">...</td>
+				<td th:text = "${employee.name}">...</td>
+				<td th:text = "${employee.role}">...</td>
+			</tr>
+					
+		</table>
+		
+		<br/><br/>
+		<form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>			
+		</form>
+			
+	</body>
+</html>
